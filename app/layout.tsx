@@ -1,6 +1,9 @@
+"use client"; 
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,10 +16,11 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Tecgen Movie App",
-  description: "Tecgen Movie App",
-};
+// export const metadata: Metadata = {
+//   title: "Tecgen Movie App",
+//   description: "Tecgen Movie App",
+// };
+const queryClient = new QueryClient()
 
 export default function RootLayout({
   children,
@@ -28,7 +32,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
       </body>
     </html>
   );
