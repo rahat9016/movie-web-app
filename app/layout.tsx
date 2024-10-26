@@ -3,8 +3,9 @@
 import localFont from "next/font/local";
 import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
-import "./globals.css";
 import Header from "./components/Header";
+import { WishlistProvider } from "./context/wishlist";
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,18 +29,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>Tecgen Movie App</title>
+        <title>Tecgen Movie web</title>
         <meta name="description" content="Tecgen Movie App" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Add other meta tags as needed */}
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <WishlistProvider>
         <QueryClientProvider client={queryClient}>
         <Header/>
           {children}
         </QueryClientProvider>
+        </WishlistProvider>
+       
       </body>
     </html>
   );

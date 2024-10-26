@@ -25,7 +25,6 @@ export default function Home() {
 
     const handleObserver = useCallback(
         (entries: IntersectionObserverEntry[]) => {
-            console.log(entries)
             const target = entries[0];
             if (target.isIntersecting && hasNextPage) {
                 fetchNextPage();

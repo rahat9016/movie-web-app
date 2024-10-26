@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Image from "next/image";
 import Link from "next/link";
-
 export default function MovieCard({movie}:any) {
     return (
         <div
@@ -20,6 +20,7 @@ export default function MovieCard({movie}:any) {
             <p className="text-gray-400">
                 {movie.release_date}
             </p>
+            
         </div>
     )
 }

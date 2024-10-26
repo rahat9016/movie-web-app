@@ -10,9 +10,9 @@ export default function Header() {
             <Link href="/">Tecgen</Link>
           </div>
           <Search/>
-          <button className=" text-gray-400 hover:text-gray-300 focus:outline-none">
+          <Link href="/wishlist" className=" text-gray-400 hover:text-gray-300 focus:outline-none">
             Wishlist
-          </button>
+          </Link>
         </div>
       </header>
     );

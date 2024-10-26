@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { Suspense } from "react";
 import CastSkelton from "../component/CastSkelton";
+import WishlistBtn from "@/app/components/WishlistBtn";
 
 const CastOfMovie = React.lazy(() => import("../component/CastOfMovie"));
 const Recommendation = React.lazy(() => import("../component/Recomandation"));
@@ -64,6 +65,7 @@ export default async function Movie({ params }: any) {
                         </div>
                         <p className="mt-3 text-sm">{data.release_date}</p>
                         <p className="text-sm">{data.overview}</p>
+                        <WishlistBtn movie={data} />
                     </div>
                 </div>
                 <div className="mt-32 px-10">
