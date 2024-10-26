@@ -1,9 +1,10 @@
 "use client"; 
 
 import localFont from "next/font/local";
+import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./globals.css";
-import Head from "next/head";
+import Header from "./components/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,6 +16,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
 
 const queryClient = new QueryClient()
 
@@ -34,8 +36,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
         <QueryClientProvider client={queryClient}>
+        <Header/>
           {children}
         </QueryClientProvider>
       </body>

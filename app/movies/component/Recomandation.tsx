@@ -11,6 +11,7 @@ const fetchRecomandation = async (id: string) => {
 };
 export default async function Recommendation({ id }: { id: string }) {
     const { results } = await fetchRecomandation(id)
+    if(!results) return null
     return <div>        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {results.map((movie: any) => {
