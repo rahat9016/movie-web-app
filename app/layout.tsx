@@ -3,6 +3,7 @@
 import localFont from "next/font/local";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,10 +16,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// export const metadata: Metadata = {
-//   title: "Tecgen Movie App",
-//   description: "Tecgen Movie App",
-// };
 const queryClient = new QueryClient()
 
 export default function RootLayout({
@@ -28,10 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>Tecgen Movie App</title>
+        <meta name="description" content="Tecgen Movie App" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Add other meta tags as needed */}
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
+
         <QueryClientProvider client={queryClient}>
           {children}
         </QueryClientProvider>

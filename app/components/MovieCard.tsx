@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function MovieCard({movie}:any) {
     return (
         <div
-
             className="bg-gray-800 p-3 rounded-md shadow-md group"
         >
             <Image
