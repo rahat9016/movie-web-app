@@ -60,7 +60,7 @@ export default function Search() {
         };
     }, []);
     return (
-        <div className="relative w-1/2" ref={dropdownRef}>
+        <div className="relative  md:w-1/2" ref={dropdownRef}>
             <div className="h-10 bg-white px-4 rounded-sm">
                 <input
                     value={query}

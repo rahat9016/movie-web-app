@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import localFont from "next/font/local";
 import Head from "next/head";
@@ -38,12 +38,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <WishlistProvider>
-        <QueryClientProvider client={queryClient}>
-        <Header/>
-          {children}
-        </QueryClientProvider>
+          <QueryClientProvider client={queryClient}>
+            <Header />
+            {children}
+          </QueryClientProvider>
         </WishlistProvider>
-       
+
       </body>
     </html>
   );
